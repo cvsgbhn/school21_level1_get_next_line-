@@ -11,7 +11,8 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	gcc -Wall -Wextra -Werror -o $(NAME) $(OBJ) -I $(HEADER) -L $(LIBS)
+	gcc -Wall -Wextra -Werror a.-o $(OBJ) $(SRC) -I $(HEADER)
+	gcc -Wall -Wextra -Werror *.out -L. $(LIBS)
 
 clean:
 	/bin/rm -rf $(OBJECTS)
