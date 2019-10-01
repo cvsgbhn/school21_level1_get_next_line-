@@ -24,21 +24,24 @@ int		get_next_line(const int fd, char **line)
 {
 	static char ending[BUFF_SIZE];
 	char		buf[BUFF_SIZE];
-	//char		*temp_array;
-	int 		n;
+	t_list		*tmp;
+	size_t 		n;
 
-	if (fd < 0 || fd > 256)
+	if (fd <= 0 || fd > 256)
 		return (-1);
-	ft_strcpy(*line, ending);
+	//ft_strcpy(*line, ending);
+	if (ft_strlen(ending))
+		tmp = ft_lstnew(ending, ft_strlen(ending));
 	ft_strclr(ending);
 	while (!(ft_strlen(ending)))
 	{
 		read (fd, buf, BUFF_SIZE);
 		n = ft_chr_before_n(buf);
-		ft_strncat(*line, buf, n);
+		//ft_strncat(*line, buf, n);
+		
 		if (n < ft_strlen(buf))
 			ft_copy_after_n(ending, buf, n);
-		*line++;
+		(*line)++;
 	}
 	return (1);
 }

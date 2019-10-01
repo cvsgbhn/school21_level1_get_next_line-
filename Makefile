@@ -10,9 +10,10 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	gcc -Wall -Wextra -Werror a.-o $(OBJ) $(SRC) -I $(HEADER)
-	gcc -Wall -Wextra -Werror *.out -L. $(LIBS)
+$(NAME):
+	clang -Wall -Wextra -Werror -I libft/ -o get_next_line.o -c get_next_line.c
+	clang -Wall -Wextra -Werror -I libft/ -o main.o -c main.c
+	clang -o test_gnl main.o get_next_line.o -I libft/includes -L libft/ -lft
 
 clean:
 	/bin/rm -rf $(OBJECTS)
