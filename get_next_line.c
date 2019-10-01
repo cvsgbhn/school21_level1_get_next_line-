@@ -24,14 +24,12 @@ int		get_next_line(const int fd, char **line)
 {
 	static char ending[BUFF_SIZE];
 	char		buf[BUFF_SIZE];
-	t_list		*tmp;
 	size_t 		n;
 
 	if (fd <= 0 || fd > 256)
 		return (-1);
-	//ft_strcpy(*line, ending);
-	if (ft_strlen(ending))
-		tmp = ft_lstnew(ending, ft_strlen(ending));
+	if (ending)
+		ft_strcpy(*line, ending);
 	ft_strclr(ending);
 	while (!(ft_strlen(ending)))
 	{
