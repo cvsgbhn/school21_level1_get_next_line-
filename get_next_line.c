@@ -6,7 +6,7 @@
 /*   By: vdanilo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 18:18:13 by vdanilo           #+#    #+#             */
-/*   Updated: 2019/10/07 19:22:04 by vdanilo          ###   ########.fr       */
+/*   Updated: 2019/10/08 19:20:34 by vdanilo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,12 @@ int		get_next_line(const int fd, char **line)
 		if ((ptr_to_end = ft_strchr(buf, '\n')))
 		{
 			*ptr_to_end = '\0';
-			pt66r_to_end++;
+			ptr_to_end++;
 			ending = ft_strdup(ptr_to_end);
 		}
 		temp_array = *line;
 		*line = ft_strjoin(*line, buf);
 		free(temp_array);
 	}
-	//printf("%d", (ft_strlen(ending) || num_read) ? 1 : 0);
 	return ((ft_strlen(ending) || num_read) ? 1 : 0);
 }
