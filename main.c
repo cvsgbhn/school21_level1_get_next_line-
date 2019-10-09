@@ -6,7 +6,7 @@ int		main(void)
 	int 	fd;
 	int		a;
 
-	fd = open("test_file1", O_RDONLY);
+	fd = open("gnl7_1.txt", O_RDONLY);
 	while ((a = get_next_line(fd, &line)) > 0)
 	{
 		printf("%d\n", a);
