@@ -49,7 +49,6 @@ int		get_next_line(const int fd, char **line)
 	char		*temp_array;
 	int			num_read;
 
-	//printf("%d\n", fd);
 	if (fd < 0 || fd > 256)
 		return (-1);
 	if (read(fd, NULL, 0) == -1)
@@ -68,15 +67,8 @@ int		get_next_line(const int fd, char **line)
 		*line = ft_strjoin(*line, buf);
 		free(temp_array);
 	}
-	//if (ft_strlen(ending) || num_read)
-	//	printf("%d\n", 1);
-	//else
-	//	printf("%d\n", 0);
 	if (!ft_strlen(*line))
-	{
 		return ((!num_read || !(ft_strlen(ending))) ? 0 : 1);
-		//return ((ft_strlen(ending) || num_read) ? 1 : 0);
-	}
 	else
 		return (1);
 }

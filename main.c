@@ -15,16 +15,16 @@ int		main(void)
 	//printf("%s\n", line);
 
 
-	//fd = 0;
-	fd = open("abc.txt" , O_RDONLY);
+	fd = 0;
+	fd = open("abc" , O_RDONLY);
 	while ((a = get_next_line(fd, &line) > 0))
 	{
 		printf("%d\n", a);
 		printf("%s\n", line);
 	}
-	printf("%d", get_next_line(fd, &line));
-	printf("%d", get_next_line(fd, &line));
-	printf("%d", get_next_line(fd, &line));
-	printf("%d", get_next_line(fd, &line));
+	//printf("%d", get_next_line(fd, &line));
+	//printf("%d", get_next_line(fd, &line));
+	//printf("%d", get_next_line(fd, &line));
+	//printf("%d", get_next_line(fd, &line));
 	return (0);
 }
