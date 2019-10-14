@@ -28,12 +28,12 @@ INCLUDES = libft.h
 
 all: $(NAME) 
 
-$(NAME): $(SRCS) $(OBJECTS) $(INCLUDES)
+$(NAME): $(SOURCES) $(OBJECTS) $(INCLUDES)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
 $(OBJECTS): %.o: %.c
-	gcc -c -Wall -Wextra -Werror $< -I $(INCLUDES)
+	gcc -c -Wall -Wextra -Werror $< -I. $(INCLUDES)
 
 clean:
 	/bin/rm -rf $(OBJECTS) 
