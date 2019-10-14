@@ -33,7 +33,7 @@ $(NAME): $(SRCS) $(OBJECTS) $(INCLUDES)
 	ranlib $(NAME)
 
 $(OBJECTS): %.o: %.c
-	gcc -c -Wall -Wextra -Werror $< -I $(INCLUDES)
+	gcc -c -Wall -Wextra -Werror $< -I. $(INCLUDES)
 
 clean:
 	/bin/rm -rf $(OBJECTS) 
