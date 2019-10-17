@@ -8,9 +8,12 @@ int		main(void)
 
 	fd = open("test_file1", O_RDONLY);
 	while ((a = get_next_line(fd, &line)) > 0)
-	{
-		printf("%s\n", line);
+        {
+	  printf("%d\n", a);
+	  printf("%zu\n", ft_strlen(line));
+	  printf("%s\n", line);
 	}
+	printf("%d\n", a);
 
 
 	//fd = 0;

@@ -68,7 +68,7 @@ int		get_next_line(const int fd, char **line)
 		free(temp_array);
 	}
 	if (!ft_strlen(*line))
-		return ((!num_read || !(ft_strlen(ending))) ? 0 : 1);
+		return ((!num_read && !(ft_strlen(ending))) ? 0 : 1);
 	else
 		return (1);
 }
